@@ -10,6 +10,7 @@ const port = 3000;
 // middleware
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
+app.use(express.static('fonts'));
 
 // db
 const pokemon = require('./models/pokemon');
