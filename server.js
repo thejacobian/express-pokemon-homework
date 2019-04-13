@@ -12,7 +12,7 @@ app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
 
 // db
-const pokemon = require('./models/pokemons');
+const pokemon = require('./models/pokemon');
 
 // index route
 app.get('/pokemon', (req, res) => {
