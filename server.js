@@ -23,8 +23,8 @@ app.get('/pokemon', (req, res) => {
 });
 
 // create route pt 1
-app.get('/pokemon/create', (req, res) => {
-  res.render('create.ejs');
+app.get('/pokemon/new', (req, res) => {
+  res.render('new.ejs');
 });
 
 // create route pt 2
