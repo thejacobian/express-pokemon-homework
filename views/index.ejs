@@ -29,13 +29,15 @@
     <h1>Pokemon Index Page</h1>
     <ul class="pokemon">
       <% for(let i = 0; i < pokemon.length; i++){ %>
-      <li><a href="/pokemon/<%= i %>"><%= pokemon[i].name %></a></li>
-      <form action="/pokemon/<%= i %>?_method=DELETE" method="POST">
-        <button type="submit">Delete</button>
-      </form>
-      <form action="/pokemon/<%= i %>/edit">
-        <button type="submit">Edit</button>
-      </form>
+      <li>
+        <a href="/pokemon/<%= i %>"><%= pokemon[i].name %></a>
+        <form action="/pokemon/<%= i %>?_method=DELETE" method="POST">
+          <button type="submit">Delete</button>
+        </form>
+        <form action="/pokemon/<%= i %>/edit">
+          <button type="submit">Edit</button>
+        </form>
+      </li>
     <% } %>
     </ul>
     <nav>
