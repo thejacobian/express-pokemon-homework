@@ -1,0 +1,71 @@
+@font-face {
+  font-family: "Pokemon GB";
+  src: url('/fonts/pokemon-gb/pokemon_gb-webfont.woff2') format('woff2'),
+    url('/fonts/pokemon-gb/pokemon_gb-webfont.woff') format('woff'),
+    url('/fonts/pokemon-gb/pokemon_gb.ttf') format("truetype");
+  font-weight: normal;
+  font-style: normal;
+}
+
+body {
+  display: relative;
+  font-family: "Pokemon GB", Verdana, Arial;
+  color: rgb(223, 226, 172);
+  background: url("../images/Aon-Game-Boy.png");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  text-align: center;
+  margin: 0 auto;
+}
+
+h1 {
+  text-decoration: underline;
+  margin: 1em 0 1em 0;
+}
+
+a {
+  display: inline;
+}
+a:visited { text-decoration: none; color:rgb(223, 226, 172); }
+a:hover { text-decoration: none; color:rgb(223, 226, 172); }
+a:focus { text-decoration: none; color:rgb(223, 226, 172); }
+a:hover, a:active { text-decoration: none; color:rgb(223, 226, 172) }
+
+form {
+  display: inline;
+}
+
+button {
+  font-family: "Pokemon GB", Verdana, Arial;
+  font-size: 11px;
+  border-width: medium;
+  border-radius: 6px;
+  border-color: rgb(223, 226, 172);
+  background-color:  rgb(65, 68, 32);
+  color: rgb(223, 226, 172);
+  margin: 0 0 1em 0;
+  cursor: pointer;
+  display: inline;
+}
+
+img {
+  width: 300px;
+  max-height: 300px;
+}
+
+button.shift {
+  margin: 26em 1em;
+  border-color: black;
+  background-color: white;
+  color: black;
+}
+
+h2 {
+  margin: 1em;
+  /* display: "inline"; */
+}
+
+/* nav {
+  margin: 16em 0 16em 0;
+} */

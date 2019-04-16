@@ -1,4 +1,3 @@
-// Inside of this file, put the following array of pokemon objects. This is your 'database' for tonight's homework
 const pokemon = [{ name: 'Bulbasaur', img: 'http://img.pokemondb.net/artwork/bulbasaur.jpg' },
   { name: 'Ivysaur', img: 'http://img.pokemondb.net/artwork/ivysaur.jpg' },
   { name: 'Venusaur', img: 'http://img.pokemondb.net/artwork/venusaur.jpg' },

@@ -4,42 +4,71 @@
 const express = require('express');
 const bodyParser = require('body-parser');
 const app = express();
+const methodOverride = require('method-override');
+const morgan = require('morgan');
 
 const port = 3000;
 
 // middleware
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
-app.use(express.static('fonts'));
+app.use(express.static('public'));
+app.use(methodOverride('_method'));
+app.use(morgan('short'));
 
 // db
 const pokemon = require('./models/pokemon');
 
-// index route
+// INDEX route
 app.get('/pokemon', (req, res) => {
   res.render('index.ejs', {
     "pokemon": pokemon,
   });
 });
 
-// create route pt 1
+// NEW route
 app.get('/pokemon/new', (req, res) => {
   res.render('new.ejs');
 });
 
-// create route pt 2
+// CREATE route
 app.post('/pokemon', (req, res) => {
-  console.log('CREATE route accessed');
-  console.log('Data within req.body: ', req.body);
+  // console.log('CREATE route accessed');
+  // console.log('Data within req.body: ', req.body);
   pokemon.push(req.body);
   res.redirect('/pokemon');
 });
 
-// show route
+// SHOW route
 app.get('/pokemon/:id', (req, res) => {
   res.render('show.ejs', {
-    "aPokemon": pokemon[req.params.id],
+    "pokemon": pokemon[req.params.id],
+    "id": req.params.id,
   });
+});
+
+// EDIT route
+app.get('/pokemon/:id/edit', (req, res) => {
+  // res.send('edit route hit');
+  res.render('edit.ejs', {
+    "pokemon": pokemon[req.params.id],
+    "id": req.params.id,
+  });
+});
+
+// UPDATE route
+app.put('/pokemon/:id', (req, res) => {
+  // res.send('update route hit');
+  console.log('Data within req.body: ', req.body);
+  pokemon[req.params.id] = req.body;
+  res.redirect('/pokemon');
+});
+
+// DELETE route
+app.delete('/pokemon/:id', (req, res) => {
+  // res.send('delete route hit')
+  pokemon.splice(req.params.id, 1);
+  res.redirect('/pokemon');
 });
 
 // listen at the bottom

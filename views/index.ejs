@@ -1,34 +1,45 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Pokemon Index Page</title>
-    <style type="text/css">
-      @font-face {
-        font-family: "Pokemon GB";
-        src: url('../fonts/pokemon-gb/pokemon_gb-webfont.woff2') format('woff2'),
-          url('../fonts/pokemon-gb/pokemon_gb-webfont.woff') format('woff'),
-          url('../fonts/pokemon-gb/pokemon_gb.ttf') format("truetype");
-        font-weight: normal;
-        font-style: normal;
-      }
-      h1 {
-        font-family: "Pokemon GB";
-        text-decoration: underline;
-      }
-    </style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Pokemon Index Page</title>
+  <link rel="stylesheet" href="/css/reset.css">
+  <link rel="stylesheet" href="/css/style.css">
+  <!--<link href="https://fonts.googleapis.com/css?family=VT323" rel="stylesheet">
+  <style type="text/css">
+    @font-face {
+      font-family: "Pokemon GB";
+      src: url('/fonts/pokemon-gb/pokemon_gb-webfont.woff2') format('woff2'),
+        url('/fonts/pokemon-gb/pokemon_gb-webfont.woff') format('woff'),
+        url('/fonts/pokemon-gb/pokemon_gb.ttf') format("truetype");
+      font-weight: normal;
+      font-style: normal;
+    }
+    body {
+      font-family: "Pokemon GB", Verdana, Arial;
+    }
+    h1 {
+      text-decoration: underline;
+    }
+  </style>-->
 </head>
 <body>
     <h1>Pokemon Index Page</h1>
     <ul class="pokemon">
-    <% for(let i = 0; i < pokemon.length; i++){ %>
-    <li><a href="/pokemon/<%= i %>" class="a-pokemon"><%= pokemon[i].name %></a></li>
+      <% for(let i = 0; i < pokemon.length; i++){ %>
+      <li><a href="/pokemon/<%= i %>"><%= pokemon[i].name %></a></li>
+      <form action="/pokemon/<%= i %>?_method=DELETE" method="POST">
+        <button type="submit">Delete</button>
+      </form>
+      <form action="/pokemon/<%= i %>/edit">
+        <button type="submit">Edit</button>
+      </form>
     <% } %>
     </ul>
     <nav>
-      <a href="/pokemon/new">Create a New Pokemon</a>
+      <a class="button" href="/pokemon/new"><button class="shift" type="button">Create a New Pokemon</button></a>
     </nav>
 </body>
 </html>

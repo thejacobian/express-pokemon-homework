@@ -1,25 +1,22 @@
 <!DOCTYPE html>
 <html>
 <head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <title>Pokemon Show Page</title>
-    <style type="text/css">
-      @font-face {
-        font-family: "Pokemon GB";
-        src: url('../fonts/pokemon-gb/pokemon_gb-webfont.woff2') format('woff2'),
-          url('../fonts/pokemon-gb/pokemon_gb-webfont.woff') format('woff'),
-          url('../fonts/pokemon-gb/pokemon_gb.ttf') format("truetype");
-        font-weight: normal;
-        font-style: normal;
-      }
-      h1 {
-        font-family: "Pokemon GB";
-        text-decoration: underline;
-      }
-    </style>
+  <link rel="stylesheet" href="/css/reset.css">
+  <link rel="stylesheet" href="/css/style.css">
 </head>
 <body>
   <h1>Pokemon Show Page</h1>
-  <h2>The <%= aPokemon.name %> image is:</h2>
-    <img src= <%= aPokemon.img %> > 
+  <img src= "<%= pokemon.img %>" > 
+  <h2><%= pokemon.name %>! I Choose You!</h2>
+  <form action="/pokemon/<%= id %>?_method=DELETE" method="POST">
+    <button class="shift" type="submit">Delete</button>
+  </form>
+  <form action = "/pokemon/<%= id %>/edit">
+    <button class="shift" type="submit">Edit</button>
+  </form>
 </body>
 </html>

@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Pokemon Edit Page</title>
+  <link rel="stylesheet" href="/css/reset.css">
+  <link rel="stylesheet" href="/css/style.css">
+</head>
+<body>
+  <h1>Pokemon Edit Page</h1>
+  <form action="/pokemon/<%= id %>?_method=PUT" method="POST">
+    <h2>Current Image (See Below)</h2>
+    <img src= "<%= pokemon.img %>" > 
+    <h2>Name: <input type="text" name = "name" value= "<%= pokemon.name %>" ></h2>
+    <h2>New Image: <input type="text" name = "img" value= "<%= pokemon.img %>" ></h2>
+    <button class="shift" type="submit">Submit Edits</button>
+  </form>
+</body>
+</html>
